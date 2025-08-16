@@ -1,0 +1,27 @@
+import pandas as pd
+
+# Dataset direct online load
+url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv"
+df = pd.read_csv(url)
+
+# First 5 rows
+print("First 5 rows:")
+print(df.head())
+
+# Dataset shape
+print("\nShape of dataset:", df.shape)
+
+# Column names
+print("\nColumns:", df.columns)
+
+# Summary stats
+print("\nSummary statistics:")
+print(df.describe())
+
+# Unique species
+print("\nUnique species:", df['species'].unique())
+print("\nCount of each species:\n", df['species'].value_counts())
+# Filter only Setosa species
+setosa = df[df['species'] == 'setosa']
+print("\nSetosa rows:", setosa.shape)
+
